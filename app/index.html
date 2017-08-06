@@ -20,9 +20,16 @@
     <script src="HomeController.js"></script>
 </head>
 
-<body ng-controller="HomeController as ctrl">
+<body ng-controller="HomeController as ctrl" ng-init="ctrl.getPublicAlbum()">
 <div id="container" class="container">
-    <div id="gallery" class="row">
+    <div class="form-group m-r-10">
+        <input class="form-control" placeholder="Tags" ng-model="ctrl.tagInput" ng-change="ctrl.getPublicAlbum()">
+    </div>
+    <div ng-show="ctrl.error">
+        <div class="error">Something went wrong!!!</div>
+    </div>
+    <div id="gallery" class="row" ng-hide="ctrl.error">
+        <h4>{{ctrl.images.title}}</h4>
         <div class="item col-md-3 col-sm-4 col-xs-6" ng-repeat="item in ctrl.images.items">
             <div class="well">
                 <a href="{{item.link}}" target="_blank">

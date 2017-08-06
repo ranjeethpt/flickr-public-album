@@ -1,21 +1,21 @@
-(function(){
+(function () {
     'use strict';
 
-    function homeController(flickrAlbumService){
+    function homeController(flickrAlbumService) {
         var ctrl = this;
         ctrl.name = 'Ranjeeth';
         ctrl.images = {};
+        ctrl.tagInput = '';
+
         ctrl.getPublicAlbum = function () {
-            flickrAlbumService.getPublicAlbum('hate').then(function (data) {
-                console.log(data);
+            flickrAlbumService.getPublicAlbum(ctrl.tagInput).then(function (data) {
                 ctrl.images = data.data;
             }, function () {
                 ctrl.error = true;
             });
         };
-        ctrl.getPublicAlbum();
     }
 
-    angular.module('flickrAlbum').controller('HomeController',['flickrAlbumService',homeController]);
+    angular.module('flickrAlbum').controller('HomeController', ['flickrAlbumService', homeController]);
 
 })();

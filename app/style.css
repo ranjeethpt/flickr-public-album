@@ -1,9 +1,13 @@
 /* Put your css in here */
 body {
     font-size: 12px;
-    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #707478;
-    background-color:#fcfcfc;
+    background-color: #fcfcfc;
+}
+
+.form-control {
+    margin-top: 10px;
 }
 
 .title {
@@ -18,16 +22,16 @@ body {
 .desc {
     line-height: 16px;
     font-size: 12px;
+    overflow: hidden;
 }
 
 .row {
-    margin-left:0;
-    margin-right:0;
+    margin-left: 0;
+    margin-right: 0;
 }
 
-
 .well {
-    border-color:#eef;
+    border-color: #eef;
 }
 
 .item img.image {
@@ -60,8 +64,8 @@ body {
 
 .isotope .item {
     -webkit-transition-property: -webkit-transform, opacity;
-    -moz-transition-property:    -moz-transform, opacity;
-    -ms-transition-property:     -ms-transform, opacity;
-    -o-transition-property:         top, left, opacity;
-    transition-property:         transform, opacity;
+    -moz-transition-property: -moz-transform, opacity;
+    -ms-transition-property: -ms-transform, opacity;
+    -o-transition-property: top, left, opacity;
+    transition-property: transform, opacity;
 }
