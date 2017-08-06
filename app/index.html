@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="flickrAlbum">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Flickr Public Album</title>
+    <link data-require="bootstrap@3.3.7" data-semver="3.3.7" rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link rel="stylesheet" href="style.css"/>
+    <script data-require="angular.js@1.5.x"
+            src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular.min.js" data-semver="1.5.11"></script>
+    <script data-require="jquery@1.10.0" data-semver="1.9.1" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script data-require="bootstrap@3.3.7" data-semver="3.3.7"
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/isotope/1.5.25/jquery.isotope.min.js"></script>
+
+    <script src="app.js"></script>
+    <script src="FlickrService.js"></script>
+    <script src="HomeController.js"></script>
+</head>
+
+<body ng-controller="HomeController as ctrl">
+<div id="container" class="container">
+    <div id="gallery" class="row">
+        <div class="item col-md-3 col-sm-4 col-xs-6" ng-repeat="item in ctrl.images.items">
+            <div class="well">
+                <a href="{{item.link}}" target="_blank">
+                    <img src="{{item.media.m}}" alt="{{item.title}}">
+                </a>
+                <div class="info">
+                    <h5 class="title">{{item.title}}</h5>
+                    <div class="desc">
+                        {{item.tags}}
+                    </div>
+                    <div class="pull-right">
+                        <small>by</small>
+                        <a href="javascript:;">{{item.author}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
