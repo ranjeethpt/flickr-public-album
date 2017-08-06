@@ -3,7 +3,6 @@
 
     function homeController(flickrAlbumService) {
         var ctrl = this;
-        ctrl.name = 'Ranjeeth';
         ctrl.images = {};
         ctrl.tagInput = '';
 
